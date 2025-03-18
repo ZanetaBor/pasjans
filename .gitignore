@@ -1,0 +1,56 @@
+# Visual Studio specific
+.vs/
+*.user
+*.suo
+*.vcxproj*
+*.ncb
+*.sdf
+*.opensdf
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+*.cache
+*.pdb
+*.exe
+*.dll
+*.log
+
+# Windows specific
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Others
+*.log
+*.cache
+*.pdb
+
+# Rider/JetBrains specific
+.idea/
+*.iml
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+project.lock.json
+*.nuget.props
+*.nuget.targets
+packages/
+
+# User-specific
+*.vsconfig
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# WPF specific
+GeneratedFiles/
+*.g.cs
+*.g.i.cs
+*.xaml.cs

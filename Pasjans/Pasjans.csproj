@@ -9,6 +9,233 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\clubs_10.jpg" />
+    <None Remove="Assets\clubs_11.jpg" />
+    <None Remove="Assets\clubs_12.jpg" />
+    <None Remove="Assets\clubs_13.jpg" />
+    <None Remove="Assets\clubs_14.jpg" />
+    <None Remove="Assets\clubs_2.jpg" />
+    <None Remove="Assets\clubs_3.jpg" />
+    <None Remove="Assets\clubs_4.jpg" />
+    <None Remove="Assets\clubs_5.jpg" />
+    <None Remove="Assets\clubs_6.jpg" />
+    <None Remove="Assets\clubs_7.jpg" />
+    <None Remove="Assets\clubs_8.jpg" />
+    <None Remove="Assets\clubs_9.jpg" />
+    <None Remove="Assets\diamonds_10.jpg" />
+    <None Remove="Assets\diamonds_11.jpg" />
+    <None Remove="Assets\diamonds_12.jpg" />
+    <None Remove="Assets\diamonds_13.jpg" />
+    <None Remove="Assets\diamonds_14.jpg" />
+    <None Remove="Assets\diamonds_2.jpg" />
+    <None Remove="Assets\diamonds_3.jpg" />
+    <None Remove="Assets\diamonds_4.jpg" />
+    <None Remove="Assets\diamonds_5.jpg" />
+    <None Remove="Assets\diamonds_6.jpg" />
+    <None Remove="Assets\diamonds_7.jpg" />
+    <None Remove="Assets\diamonds_8.jpg" />
+    <None Remove="Assets\diamonds_9.jpg" />
+    <None Remove="Assets\hearts_10.jpg" />
+    <None Remove="Assets\hearts_11.jpg" />
+    <None Remove="Assets\hearts_12.jpg" />
+    <None Remove="Assets\hearts_13.jpg" />
+    <None Remove="Assets\hearts_14.jpg" />
+    <None Remove="Assets\hearts_2.jpg" />
+    <None Remove="Assets\hearts_3.jpg" />
+    <None Remove="Assets\hearts_4.jpg" />
+    <None Remove="Assets\hearts_5.jpg" />
+    <None Remove="Assets\hearts_6.jpg" />
+    <None Remove="Assets\hearts_7.jpg" />
+    <None Remove="Assets\hearts_8.jpg" />
+    <None Remove="Assets\hearts_9.jpg" />
+    <None Remove="Assets\kier_10.jpg" />
+    <None Remove="Assets\kier_11.jpg" />
+    <None Remove="Assets\kier_12.jpg" />
+    <None Remove="Assets\kier_13.jpg" />
+    <None Remove="Assets\kier_14.jpg" />
+    <None Remove="Assets\kier_2.jpg" />
+    <None Remove="Assets\kier_3.jpg" />
+    <None Remove="Assets\kier_4.jpg" />
+    <None Remove="Assets\kier_5.jpg" />
+    <None Remove="Assets\kier_6.jpg" />
+    <None Remove="Assets\kier_7.jpg" />
+    <None Remove="Assets\kier_8.jpg" />
+    <None Remove="Assets\kier_9.jpg" />
+    <None Remove="Assets\spades_10.jpg" />
+    <None Remove="Assets\spades_11.jpg" />
+    <None Remove="Assets\spades_12.jpg" />
+    <None Remove="Assets\spades_13.jpg" />
+    <None Remove="Assets\spades_14.jpg" />
+    <None Remove="Assets\spades_2.jpg" />
+    <None Remove="Assets\spades_3.jpg" />
+    <None Remove="Assets\spades_4.jpg" />
+    <None Remove="Assets\spades_5.jpg" />
+    <None Remove="Assets\spades_6.jpg" />
+    <None Remove="Assets\spades_7.jpg" />
+    <None Remove="Assets\spades_8.jpg" />
+    <None Remove="Assets\spades_9.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\clubs_10.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\clubs_11.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\clubs_12.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\clubs_13.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\clubs_14.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\clubs_2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\clubs_3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\clubs_4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\clubs_5.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\clubs_6.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\clubs_7.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\clubs_8.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\clubs_9.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\diamonds_10.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\diamonds_11.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\diamonds_12.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\diamonds_13.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\diamonds_14.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\diamonds_2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\diamonds_3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\diamonds_4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\diamonds_5.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\diamonds_6.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\diamonds_7.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\diamonds_8.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\diamonds_9.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\hearts_10.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\hearts_11.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\hearts_12.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\hearts_13.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\hearts_14.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\hearts_2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\hearts_3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\hearts_4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\hearts_5.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\hearts_6.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\hearts_7.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\hearts_8.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\hearts_9.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\spades_10.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\spades_11.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\spades_12.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\spades_13.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\spades_14.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\spades_2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\spades_3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\spades_4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\spades_5.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\spades_6.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\spades_7.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\spades_8.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\spades_9.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Include="App.xaml" />
   </ItemGroup>
 

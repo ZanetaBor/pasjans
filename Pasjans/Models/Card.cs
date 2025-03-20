@@ -24,7 +24,8 @@ namespace Pasjans.Models
     {
         public Suit Suit { get; }
         public Rank Rank { get; }
-        public string ImageSource => $"{Suit.ToString().ToLower()}_{(int)Rank}.png"; // Nazwa pliku obrazka
+        public string ImageSource => $"pack://application:,,,/Assets/{Suit.ToString().ToLower()}_{(int)Rank}.jpg";
+        // Nazwa pliku obrazka
         public Card(Suit suit, Rank rank)
         {
             Suit = suit;

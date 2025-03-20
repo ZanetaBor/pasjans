@@ -5,14 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Media;
 using Pasjans.Models;
 using Pasjans.View;
 
 namespace Pasjans.ViewModels
 {
-    public class GameViewModel
+    public class GameViewModel : INotifyPropertyChanged
     {
         private Deck _deck;
+        public List<Card> Deck { get; private set; }
         public string DrawnCard { get; private set; }
         public ICommand DrawCardCommand { get; } //służy do wiązania poleceń z widokiem (np. przyciskiem)
         public ICommand ShuffleCommand { get; }
@@ -21,6 +23,7 @@ namespace Pasjans.ViewModels
         public GameViewModel()
         {
             _deck = new Deck();
+            Deck = new List<Card>(_deck.GetCards());
             ShuffleCommand = new RelayCommand(_ => ShuffleDeck());
             DrawCardCommand = new RelayCommand(_ => DrawCard());
         }
@@ -28,17 +31,20 @@ namespace Pasjans.ViewModels
         private void ShuffleDeck()
         {
             _deck.Shuffle();
-            OnPropertyChanged(nameof(DeckString));
+            Deck = new List<Card>(_deck.GetCards());
+            OnPropertyChanged(nameof(Deck));
         }
         private void DrawCard()
         {
-            if (_deck != null && _deck.ToString().Length > 0)
+            if (_deck != null && _deck.GetCards().Count > 0)
             {
                 try
                 {
-                    DrawnCard = _deck.DrawCard().ToString();
+                    Card drawn = _deck.DrawCard();
+                    DrawnCard = drawn.ToString();
+                    Deck = new List<Card>(_deck.GetCards());
                     OnPropertyChanged(nameof(DrawnCard));
-                    OnPropertyChanged(nameof(DeckString));
+                    OnPropertyChanged(nameof(Deck));
                 }
                 catch (InvalidOperationException)
                 {
@@ -47,8 +53,6 @@ namespace Pasjans.ViewModels
                 }
             }
         }
-
-        public string DeckString => _deck.ToString();
 
         // Implementacja INotifyPropertyChanged dla MVVM
         public event PropertyChangedEventHandler PropertyChanged;

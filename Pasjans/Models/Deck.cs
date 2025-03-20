@@ -22,6 +22,11 @@ namespace Pasjans.Models
                 }
             }
         }
+        public List<Card> GetCards()
+        {
+            return new List<Card>(cards);  
+        }
+
 
         //tasowanie talii kard
         public void Shuffle()

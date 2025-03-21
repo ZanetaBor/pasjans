@@ -12,15 +12,83 @@
     </UserControl.DataContext>
     
     <Grid Background="White">
-        <Button Content="Tasuj karty" Command="{Binding ShuffleCommand}" Width="60" Height="40" Margin="20" VerticalAlignment="Bottom" ContentStringFormat=""/>
-        <Button Content="Dobierz kartę" Command="{Binding DrawCardCommand}" Width="60" Height="40" Margin="20" HorizontalAlignment="Right"/>
-        <TextBlock Text="Tutaj będzie gra!" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <ListView ItemsSource="{Binding Deck}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="400" Height="500" Margin="50">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Image Source="{Binding ImageSource}"  Width="100" Height="150" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+
+        <!-- Sekcja górna -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Stos dobierania -->
+            <RowDefinition Height="Auto"/>
+            <!-- Miejsca na Asy -->
+            <RowDefinition Height="*"/>
+            <!-- Główna część gry -->
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+            <Image Source="{Binding DrawPile.Count, Converter={StaticResource CardImageConverter}}" Width="100" Height="150" Margin="5"/>
+            <Image Source="{Binding DiscardPile.Last.ImageSource}" Width="100" Height="150" Margin="5"/>
+            <Button Content="Dobierz kartę" Command="{Binding DrawCardCommand}" Width="120" Height="40" Margin="10"/>
+        </StackPanel>
+
+        <!-- Miejsca na karty Asów -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <ItemsControl ItemsSource="{Binding FoundationPiles}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Width="100" Height="150" BorderBrush="Black" BorderThickness="2">
+                            <Image Source="{Binding ImageSource}" Width="100" Height="150"/>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+
+        <!-- Główne stosy kart -->
+        <Grid Grid.Row="2" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <ItemsControl ItemsSource="{Binding TableauPiles}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <ItemsControl ItemsSource="{Binding}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Vertical"/>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding ImageSource}" Width="100" Height="150" Margin="2"/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+
+        <Button Content="Tasuj karty" Command="{Binding ShuffleCommand}" Width="100" Height="40" Margin="20" VerticalAlignment="Bottom"/>
     </Grid>
 </UserControl>

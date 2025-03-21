@@ -61,6 +61,7 @@
     <None Remove="Assets\kier_7.jpg" />
     <None Remove="Assets\kier_8.jpg" />
     <None Remove="Assets\kier_9.jpg" />
+    <None Remove="Assets\revers.jpg" />
     <None Remove="Assets\spades_10.jpg" />
     <None Remove="Assets\spades_11.jpg" />
     <None Remove="Assets\spades_12.jpg" />
@@ -192,6 +193,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\hearts_9.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\revers.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\spades_10.jpg">

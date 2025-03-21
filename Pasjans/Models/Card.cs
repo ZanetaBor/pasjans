@@ -24,12 +24,19 @@ namespace Pasjans.Models
     {
         public Suit Suit { get; }
         public Rank Rank { get; }
-        public string ImageSource => $"pack://application:,,,/Assets/{Suit.ToString().ToLower()}_{(int)Rank}.jpg";
+        public bool IsFaceUp { get; set; } //revers/obverse
+
         // Nazwa pliku obrazka
+        public string ImageSource => IsFaceUp
+            ? $"pack://application:,,,/Assets/{Suit.ToString().ToLower()}_{(int)Rank}.jpg"
+            : $"pack://application:,,,/Assets/revers.jpg";
+
+        
         public Card(Suit suit, Rank rank)
         {
             Suit = suit;
             Rank = rank;
+            IsFaceUp = false;
         }
 
         public override string ToString() => $"{Rank} of {Suit}"; //przesłonięcie metody ToString() - wyswietlanie mojej nazwy karty zamiast ogolnej nazwy

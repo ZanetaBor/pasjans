@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Pasjans.Models;
 
@@ -12,28 +10,27 @@ namespace Pasjans.ViewModels
     public class GameViewModel : INotifyPropertyChanged
     {
         private Deck _deck;
-        public List<Card> Deck { get; private set; }
-        public List<Card> DrawPile { get; private set; }  // Stos dobierania (zakryte karty)
+        public List<Card> Deck { get; private set; } // talia kart
+        public List<Card> DrawPile { get; private set; } // Stos dobierania (zakryte karty)
         public List<Card> DiscardPile { get; private set; } // Odkryte karty
         public List<List<Card>> TableauPiles { get; private set; } // 10 stosów gry
-        public List<Card> FoundationPiles { get; private set; } // Miejsca na Asy
-        
+        public List<List<Card>> FoundationPiles { get; private set; } // Miejsca na Asy
+
         public string DrawnCard { get; private set; }
         public ICommand DrawCardCommand { get; } //służy do wiązania poleceń z widokiem (np. przyciskiem)
         public ICommand ShuffleCommand { get; }
 
-        //konstruktor GameViewModel
+        // konstruktor GameViewModel
         public GameViewModel()
         {
             _deck = new Deck();
             _deck.Shuffle();
-
             Deck = new List<Card>(_deck.GetCards());
             DrawPile = new List<Card>(Deck);
             DiscardPile = new List<Card>();
 
             // Miejsca na Asy (cztery puste pola)
-            FoundationPiles = new List<Card> { null, null, null, null };
+            FoundationPiles = new List<List<Card>> { new(), new(), new(), new() };
 
             // Inicjalizacja 10 stosów
             TableauPiles = new List<List<Card>>();
@@ -42,18 +39,6 @@ namespace Pasjans.ViewModels
                 TableauPiles.Add(new List<Card>());
             }
 
-            // Rozdanie kart do Tableau
-            for (int col = 0; col < 10; col++)
-            {
-                for (int row = 0; row < (col < 4 ? 6 : 5); row++)
-                {
-                    var card = DrawPile.Last();
-                    DrawPile.RemoveAt(DrawPile.Count - 1);
-                    TableauPiles[col].Add(card);
-                }
-            }
-
-            ShuffleDeck();
             InitializeGame();
 
             ShuffleCommand = new RelayCommand(_ => ShuffleDeck());
@@ -67,13 +52,19 @@ namespace Pasjans.ViewModels
         {
             _deck.Shuffle();
             Deck = new List<Card>(_deck.GetCards());
+            DrawPile = new List<Card>(Deck); // Resetujemy stos dobierania
+            DiscardPile.Clear();
+
             OnPropertyChanged(nameof(Deck));
+            OnPropertyChanged(nameof(DrawPile));
+            OnPropertyChanged(nameof(DiscardPile));
         }
 
         private void InitializeGame()
         {
             DrawPile.Clear();
             DiscardPile.Clear();
+
             foreach (var pile in FoundationPiles)
             {
                 pile.Clear();
@@ -89,13 +80,20 @@ namespace Pasjans.ViewModels
                 int hiddenCount = i < 4 ? 5 : 4;
                 for (int j = 0; j < hiddenCount; j++)
                 {
-                    TableauPiles[i].Add(_deck.DrawCard());
+                    if (DrawPile.Count > 0)
+                    {
+                        TableauPiles[i].Add(DrawPile.Last());
+                        DrawPile.RemoveAt(DrawPile.Count - 1);
+                    }
                 }
-                TableauPiles[i].Add(_deck.DrawCard()); // Ostatnia karta odkryta
+                if (DrawPile.Count > 0)
+                {
+                    var lastCard = DrawPile.Last();
+                    lastCard.IsFaceUp = true; // Ostatnia karta w kolumnie jest odkryta
+                    TableauPiles[i].Add(lastCard);
+                    DrawPile.RemoveAt(DrawPile.Count - 1);
+                }
             }
-
-            // Reszta talii na stosie dobierania
-            DrawPile.AddRange(_deck.GetCards());
 
             OnPropertyChanged(nameof(DrawPile));
             OnPropertyChanged(nameof(DiscardPile));
@@ -124,7 +122,6 @@ namespace Pasjans.ViewModels
             }
         }
 
-        // Implementacja INotifyPropertyChanged dla MVVM
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
         {

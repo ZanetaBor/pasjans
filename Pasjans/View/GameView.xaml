@@ -24,7 +24,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
-            <Image Source="{Binding DrawPile.Count, Converter={StaticResource CardImageConverter}}" Width="100" Height="150" Margin="5"/>
+            <Image Source="pack://application:,,,/Assets/revers.jpg" Width="100" Height="150" Margin="5"/>
             <Image Source="{Binding DiscardPile.Last.ImageSource}" Width="100" Height="150" Margin="5"/>
             <Button Content="Dobierz kartę" Command="{Binding DrawCardCommand}" Width="120" Height="40" Margin="10"/>
         </StackPanel>
